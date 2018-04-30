@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Fifteen functions and definitions
+ * Ninja functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -26,7 +26,37 @@
  */
 
 /**
+ * Defined Import Folder 
+ *
+ * @since 1.0
+ */
+
+if ( ! defined( 'N_EXTEND_FOLDER' ) ) {
+	define( 'N_EXTEND_FOLDER', __DIR__ );
+}
+/**
+ * Crate function import
+ *
+ * @since 1.0
+ */
+if ( ! function_exists( 'import' ) ) {
+    function import( $folder = NULL, $name = NULL ) {
+        $inc = 'inc';
+		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$folder.'/ninja-view-'.$name.'.php' );
+    }
+}
+
+/**
+ * GET the Version Template
+ *
+ * @since 1.0
+ */
+$theme       = wp_get_theme( 'Ninja' );
+$ninja_ver   = $theme['Version'];
+
+/**
  * Set the content width based on the theme's design and stylesheet.
  *
- * @since 
+ * @since 1.0
  */
+require_once 'inc/ninja-config.php';

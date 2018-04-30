@@ -6,7 +6,7 @@
  *
  * @package 
  * @subpackage 
- * @since 
+ * @since 1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -28,5 +28,4 @@
  * 
  */
 do_action('ninja_header'); ?>
-</header>
-<main id="ninja-front" class="ninja-content setup">
+</header><main id="ninja-front" class="ninja-content setup">
