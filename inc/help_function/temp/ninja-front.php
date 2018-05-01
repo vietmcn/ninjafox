@@ -23,7 +23,7 @@ if ( ! function_exists('ninja_front_head_after' ) ) {
 if ( !function_exists('ninja_front_head') ) {
     /**
      * Render Front  
-     * @Name header
+     * @Hook ninja_header()
      * -> logo 
      * -> Search From
      * -> Cart
