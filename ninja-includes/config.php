@@ -34,7 +34,7 @@
  * 
  * @since 1.0
  */
-require_once 'ninja-function/config.php';
+require_once 'help-function/config.php';
 
 /**
  * Set up template
@@ -95,7 +95,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	global $ninja_ver;
 
 	wp_enqueue_style( 'ninja-style', get_template_directory_uri() . '/style.css', '', $ninja_ver );
-	wp_enqueue_style( 'ninja-screen', get_template_directory_uri() . '/assets/css/screen.min.css', '', $ninja_ver );
+	wp_enqueue_style( 'ninja-screen', get_template_directory_uri() . '/ninja-assets/css/screen.min.css', '', $ninja_ver );
 	wp_enqueue_style( 'ninja-font', '//fonts.googleapis.com/css?family=Quicksand:400,500,700', '', $ninja_ver );
 
 } );

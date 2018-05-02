@@ -15,4 +15,4 @@ require_once 'hook/add-hook.php';
  * @since 1.0
  * 
  */
-require_once 'temp/front.php';
+require_once 'template/front.php';
