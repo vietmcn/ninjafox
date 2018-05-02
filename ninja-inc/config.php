@@ -34,7 +34,7 @@
  * 
  * @since 1.0
  */
-require_once 'help_function/ninja-config.php';
+require_once 'ninja-function/config.php';
 
 /**
  * Set up template

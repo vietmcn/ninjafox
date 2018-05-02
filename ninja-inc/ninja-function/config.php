@@ -8,11 +8,11 @@ if ( !defined('ABSPATH') ) {
  * @since 1.0
  * 
  */
-require_once 'hook/ninja-remove-hook.php';
-require_once 'hook/ninja-add-hook.php';
+require_once 'hook/remove-hook.php';
+require_once 'hook/add-hook.php';
 /**
  * Import Temp
  * @since 1.0
  * 
  */
-require_once 'temp/ninja-front.php';
+require_once 'temp/front.php';

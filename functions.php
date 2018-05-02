@@ -41,17 +41,16 @@ if ( ! defined( 'N_EXTEND_FOLDER' ) ) {
  */
 if ( ! function_exists( 'import' ) ) {
     function import( $folder = NULL, $name = NULL ) {
-        $inc = 'inc';
-		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$folder.'/ninja-view-'.$name.'.php' );
+        $inc = 'ninja-inc';
+		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$folder.'/view-'.$name.'.php' );
     }
 }
-
 /**
  * GET the Version Template
  *
  * @since 1.0
  */
-$theme       = wp_get_theme( 'Ninja' );
+$theme       = wp_get_theme( 'ninja' );
 $ninja_ver   = $theme['Version'];
 
 /**
@@ -59,4 +58,4 @@ $ninja_ver   = $theme['Version'];
  *
  * @since 1.0
  */
-require_once 'inc/ninja-config.php';
+require_once 'ninja-inc/config.php';
