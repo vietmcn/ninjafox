@@ -34,6 +34,7 @@
  * 
  * @since 1.0
  */
+require_once 'class/class-mobile-detect.php';
 require_once 'help-function/config.php';
 
 /**
@@ -98,4 +99,20 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'ninja-screen', get_template_directory_uri() . '/ninja-assets/css/screen.min.css', '', $ninja_ver );
 	wp_enqueue_style( 'ninja-font', '//fonts.googleapis.com/css?family=Quicksand:400,500,700', '', $ninja_ver );
 
+} );
+
+add_action('wp_footer', function() {
+	?>
+		<script>
+			(function() {
+				var cx = '011986442607755133710:kfeywyfxn94';
+				var gcse = document.createElement('script');
+				gcse.type = 'text/javascript';
+				gcse.async = true;
+				gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+	<?php 
 } );

@@ -11,8 +11,16 @@ if ( !defined('ABSPATH') ) {
 require_once 'hook/remove-hook.php';
 require_once 'hook/add-hook.php';
 /**
- * Import Temp
+ * Import Template
+ * Desktop+
+ * Mobile+
  * @since 1.0
  * 
  */
-require_once 'template/front.php';
+global $ninja_mobile;
+
+if ( $ninja_mobile->isMobile() ) {
+
+} else {
+    require_once 'template/screen-large/header.php';
+}

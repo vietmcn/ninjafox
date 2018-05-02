@@ -14,9 +14,13 @@ if ( ! class_exists( 'Ninja_View_Front' ) ) {
             } else {
                 $h = 'div';
             }
-            $out  = '<'.$h.' id="ninja-class-head">';
+            $out  = '<'.$h.' id="ninja-class-head" class="">';
             $out .= '<a href="'.$att['url'].'" title="'.$att['title'].'">';
-            $out .= $att['logo'];
+            if ( isset( $att['logo_img'] ) ) {
+                $out .= '<img src="'.$att['logo_img'].'" alt="'.$att['title'].'"/>';
+            } else {
+                $out .= $att['logo'];
+            }
             $out .= '</a>';
             $out .= '</'.$h.'>';
             echo $out;
@@ -31,6 +35,13 @@ if ( ! class_exists( 'Ninja_View_Front' ) ) {
             ) );
         }
         public function search()
+        {
+            $out  = '<div id="ninja-search" class="col-2">';
+            $out .= '<gcse:searchbox-only></gcse:searchbox-only>';
+            $out .= '</div>';
+            echo $out;
+        }
+        public function cart( $att ) 
         {
             
         }

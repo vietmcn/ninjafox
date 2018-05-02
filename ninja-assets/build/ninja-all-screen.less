@@ -9,6 +9,19 @@ body {
         margin: 0 auto;
         min-width: 1024px;
     }
+    /**
+     * Colunm
+     */
+    .flex {
+        display: flex;
+        display: -webkit-flex;
+        .col-1 {
+            flex: 1;
+        }
+        .col-2 {
+            flex: 2;
+        }
+    }
     .w1024 {
         @media only screen and ( max-width: 1024px ) {
             width: 1024px;

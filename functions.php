@@ -22,7 +22,7 @@
  *
  * @package 
  * @subpackage 
- * @since 
+ * @since 1.0
  */
 
 /**
@@ -33,17 +33,6 @@
 
 if ( ! defined( 'N_EXTEND_FOLDER' ) ) {
 	define( 'N_EXTEND_FOLDER', __DIR__ );
-}
-/**
- * Crate function import
- *
- * @since 1.0
- */
-if ( ! function_exists( 'import' ) ) {
-    function import( $folder = NULL, $name = NULL ) {
-        $inc = 'ninja-includes';
-		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$folder.'/view-'.$name.'.php' );
-    }
 }
 /**
  * GET the Version Template
@@ -58,4 +47,4 @@ $ninja_ver   = $theme['Version'];
  *
  * @since 1.0
  */
-require_once 'ninja-inc/config.php';
+require_once 'ninja-includes/config.php';

@@ -8,37 +8,35 @@ if ( !defined('ABSPATH') ) {
  * @since 1.0 
  *
  */
-import( 'view', 'front' );
+import_view( 'view', 'front' );
 
 if ( ! function_exists('ninja_front_head_before' ) ) {
     function ninja_front_head_before() {
-        echo '<div class="ninja-container">';
+        echo '<div class="ninja-container flex">';
     }
 }
+add_action( 'ninja_header', 'ninja_front_head_before', 5 );
+
 if ( ! function_exists('ninja_front_head_after' ) ) {
     function ninja_front_head_after() {
         echo '</div>';
     }
 }
-if ( !function_exists('ninja_front_head') ) {
-    /**
-     * Render Front  
-     * @Hook ninja_header()
-     * -> logo 
-     * -> Search From
-     * -> Cart
-     * -> Account
-     * 
-     * @since 1.0
-     */
-    function ninja_front_head() {
+add_action( 'ninja_header', 'ninja_front_head_after', 50 );
 
+if ( !function_exists('ninja_front_head') ) {
+
+    function ninja_front_head() {
+        
         $ninja_view = new Ninja_View_Front;
-        //Logo
+        //Render Logo Main
         $ninja_view->logo( array(
             'title' => get_bloginfo('name'),
             'url' => get_bloginfo('url'),
-            'logo' => 'Trangfox.com',
+            'logo_img' => 'http://opencart.opencartworks.com/themes/so_emarket/layout2/image/catalog/logo2.png',
         ));
+        //Form Search by Google
+        $ninja_view->search();
     }
 }
+add_action( 'ninja_header', 'ninja_front_head',        10 );
