@@ -34,6 +34,31 @@
 if ( ! defined( 'N_EXTEND_FOLDER' ) ) {
 	define( 'N_EXTEND_FOLDER', __DIR__ );
 }
+
+/**
+ * Crate function import view
+ *
+ * @since 1.0
+ */
+if ( ! function_exists( 'import_view' ) ) {
+    function import_view( $folder = NULL, $name = NULL ) {
+        $inc = 'ninja-includes';
+		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$folder.'/view-'.$name.'.php' );
+    }
+}
+/**
+ * Crate function import_template
+ *
+ * @since 1.0
+ */
+if ( ! function_exists( 'import_template' ) ) {
+	function import_template( $folder = NULL, $name = NULL ) {
+		$inc = 'ninja-includes';
+		$template = 'help-function/template';
+		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$template.'/screen-'.$folder.'/'.$name.'.php' );
+	}
+}
+
 /**
  * GET the Version Template
  *

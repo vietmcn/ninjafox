@@ -9,4 +9,4 @@
  * @since 
  */
 ?>
-</main><?php wp_footer(); do_action('ninja_footer');?></body></html>
+</main><?php do_action('ninja_footer'); wp_footer();?></body></html>

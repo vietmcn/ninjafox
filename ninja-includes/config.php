@@ -26,15 +26,16 @@
  */
 
 /**
- * Import
- * 
- * Class
- * Function
- * View
- * 
+ * Import Class
  * @since 1.0
  */
 require_once 'class/class-mobile-detect.php';
+require_once 'class/class-extend.php';
+require_once 'class/class-config.php';
+/**
+ * Import help function
+ * @since 1.0
+ */
 require_once 'help-function/config.php';
 
 /**

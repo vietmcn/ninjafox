@@ -45,5 +45,9 @@ if ( ! class_exists( 'Ninja_View_Front' ) ) {
         {
             
         }
+        public function footer( $att ) 
+        {
+            
+        }
     }
 }

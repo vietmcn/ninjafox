@@ -39,4 +39,4 @@ if ( !function_exists('ninja_front_head') ) {
         $ninja_view->search();
     }
 }
-add_action( 'ninja_header', 'ninja_front_head',        10 );
+add_action( 'ninja_header', 'ninja_front_head',  10 );
