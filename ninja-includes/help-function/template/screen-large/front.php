@@ -11,7 +11,6 @@ if ( is_home() || is_front_page() ) {
     return;
 }
 add_action( 'ninja_front', function() {
-    
     import_view('view', 'swiper' );
     /**
      * Template Slider

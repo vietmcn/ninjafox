@@ -10,19 +10,15 @@ if ( !defined('ABSPATH') ) {
  */
 import_view( 'view', 'front' );
 
+add_action( 'ninja_header', 'ninja_front_head_before', 5 );
+add_action( 'ninja_header', 'ninja_front_head',  10 );
+add_action( 'ninja_header', 'ninja_front_head_after', 50 );
+
 if ( ! function_exists('ninja_front_head_before' ) ) {
     function ninja_front_head_before() {
         echo '<div class="ninja-container flex">';
     }
 }
-add_action( 'ninja_header', 'ninja_front_head_before', 5 );
-
-if ( ! function_exists('ninja_front_head_after' ) ) {
-    function ninja_front_head_after() {
-        echo '</div>';
-    }
-}
-add_action( 'ninja_header', 'ninja_front_head_after', 50 );
 
 if ( !function_exists('ninja_front_head') ) {
 
@@ -39,4 +35,9 @@ if ( !function_exists('ninja_front_head') ) {
         $ninja_view->search();
     }
 }
-add_action( 'ninja_header', 'ninja_front_head',  10 );
+
+if ( ! function_exists('ninja_front_head_after' ) ) {
+    function ninja_front_head_after() {
+        echo '</div>';
+    }
+}
