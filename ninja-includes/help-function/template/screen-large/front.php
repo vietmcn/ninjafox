@@ -1,14 +1,12 @@
 <?php 
 /**
  * Template Index/Front/Page
+ * Learn more: {@link }
  * @since 1.0
  * 
  */
 if ( !defined('ABSPATH') ) {
     exit;
-}
-if ( is_home() || is_front_page() ) {
-    return;
 }
 add_action( 'ninja_front', function() {
     import_view('view', 'swiper' );
