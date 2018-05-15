@@ -38,10 +38,11 @@ if ( !function_exists('ninja_front_head') ) {
 
         //Render Logo Main
         $ninja_view->logo( array(
-            'title' => get_bloginfo('name'),
             'url' => get_bloginfo('url'),
-            'logo_img' => 'http://opencart.opencartworks.com/themes/so_emarket/layout2/image/catalog/logo2.png',
+            'title' => get_bloginfo('name'),
+            'logo_img' => '//opencart.opencartworks.com/themes/so_emarket/layout2/image/catalog/logo2.png',
         ));
+        
         //Form Search by Google
         $ninja_view->search();
     }

@@ -41,13 +41,5 @@ if ( ! class_exists( 'Ninja_View_Front' ) ) {
             $out .= '</div>';
             echo $out;
         }
-        public function cart( $att ) 
-        {
-            
-        }
-        public function footer( $att ) 
-        {
-            
-        }
     }
 }

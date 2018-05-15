@@ -3,8 +3,7 @@ if ( !defined('ABSPATH') ) {
     exit;
 }
 /**
- * \Swiper\
- * @link
+ * Display Show Front Template
  * @since 1.0
  * @author ninja
  */
@@ -16,7 +15,6 @@ add_action( 'ninja_front', function() {
      * @author ninja
      */
     import_view( 'swiper' );
-
     $ninja_slider = new Ninja_View_Slider;
     
     $out  = '<article id="ninja-slide-front">';

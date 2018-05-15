@@ -1,29 +1,22 @@
 <?php
-/**
- * Import Template
- * Desktop+
- * Mobile+
- * @since 1.0
- * 
- */ 
 if ( !defined('ABSPATH') ) {
     exit;
 }
+/**
+ * Display Config Template 
+ * @since 1.0
+ * @author ninja
+ */ 
+
 global $ninja_mobile;
 
 if ( $ninja_mobile->isMobile() ) {
-
+    
 } else {
-    /**
-     * Template Header
-     * @since 1.0
-     * 
-     */
+    //Import Header
     import_template( 'large', 'header' );
+    //Import Front
     import_template( 'large', 'front' );
-    /**
-     * Template Footer 
-     * @since 1.0
-     */
+    //Import Footer
     import_template( 'large', 'footer' );
 }
