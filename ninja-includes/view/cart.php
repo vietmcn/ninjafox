@@ -34,7 +34,7 @@ if ( !class_exists( 'Ninja_WCCart' ) ) :
             $fragments['a.cart-contents'] = ob_get_clean();
             return $fragments;
         }
-        private function ninja_cart_link() {
+        public function ninja_cart_link() {
             /**
              * Cart Link
              * Displayed a link to the cart including the number of items present and the cart total

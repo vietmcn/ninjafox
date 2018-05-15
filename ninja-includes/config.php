@@ -31,7 +31,6 @@
  */
 require_once 'class/class-mobile-detect.php';
 require_once 'class/class-extend.php';
-require_once 'class/class-config.php';
 /**
  * Import help function
  * @since 1.0
@@ -104,7 +103,6 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'ninja-style', get_template_directory_uri() . '/style.css', '', $ninja_ver );
 	wp_enqueue_style( 'ninja-screen', get_template_directory_uri() . '/ninja-assets/css/screen.min.css', '', $ninja_ver );
 	wp_enqueue_style( 'ninja-font', '//fonts.googleapis.com/css?family=Quicksand:400,500,700', '', $ninja_ver );
-
 } );
 
 add_action('wp_footer', function() {
@@ -115,7 +113,7 @@ add_action('wp_footer', function() {
 				var gcse = document.createElement('script');
 				gcse.type = 'text/javascript';
 				gcse.async = true;
-				gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+				gcse.src = '//cse.google.com/cse.js?cx=' + cx;
 				var s = document.getElementsByTagName('script')[0];
 				s.parentNode.insertBefore(gcse, s);
 			})();
