@@ -41,9 +41,10 @@ if ( ! defined( 'N_EXTEND_FOLDER' ) ) {
  * @since 1.0
  */
 if ( ! function_exists( 'import_view' ) ) {
-    function import_view( $folder = NULL, $name = NULL ) {
-        $inc = 'ninja-includes';
-		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$folder.'/view-'.$name.'.php' );
+    function import_view( $name = NULL ) {
+		$inc = 'ninja-includes';
+		$view = 'view';
+		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$view.'/'.$name.'.php' );
     }
 }
 /**

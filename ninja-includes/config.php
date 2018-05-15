@@ -1,6 +1,6 @@
 <?php
 /**
- * Ninja Config Temp
+ * Ninja Config Template
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -20,9 +20,9 @@
  * For more information on hooks, actions, and filters,
  * {@link https://codex.wordpress.org/Plugin_API}
  *
- * @package 
- * @subpackage 
- * @since 
+ * @package wordpress
+ * @subpackage ninja
+ * @since 1.0
  */
 
 /**
@@ -35,20 +35,24 @@ require_once 'class/class-config.php';
 /**
  * Import help function
  * @since 1.0
+ * @author ninja
  */
-require_once 'help-function/config.php';
+//Config Template 
+require_once 'help-function/template-config.php';
 
-/**
- * Set up template
- *
- * @since 1.0
- */
+
 add_action('after_setup_theme', function() {
+	/**
+	 * Set up template
+	 * @link {https://codex.wordpress.org/Plugin_API/Action_Reference/after_setup_theme}
+	 * @since 1.0
+	 * @author ninja
+	 */
     /*
 	 * Make theme available for translation.
 	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentyfifteen
 	 * If you're building a theme based on twentyfifteen, use a find and replace
-	 * to change 'twentyfifteen' to the name of your theme in all the template files
+	 * to change 'ninja' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'ninja' );
 
@@ -82,20 +86,21 @@ add_action('after_setup_theme', function() {
 
 /**
  * Remove Bar Admin
+ * @link {https://codex.wordpress.org/Function_Reference/show_admin_bar}
  * @since 1.0
+ * @author ninja
  */
 add_filter('show_admin_bar', '__return_false');
 
-/**
- * Setup Script 
- * javascript
- * Style
- * @since 1.0
- */
-add_action( 'wp_enqueue_scripts', function() {
-	
-	global $ninja_ver;
 
+add_action( 'wp_enqueue_scripts', function() {
+	/**
+	 * Setup Script 
+	 * @link {https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts}
+	 * @since 1.0
+	 * @author ninja
+	 */
+	global $ninja_ver;
 	wp_enqueue_style( 'ninja-style', get_template_directory_uri() . '/style.css', '', $ninja_ver );
 	wp_enqueue_style( 'ninja-screen', get_template_directory_uri() . '/ninja-assets/css/screen.min.css', '', $ninja_ver );
 	wp_enqueue_style( 'ninja-font', '//fonts.googleapis.com/css?family=Quicksand:400,500,700', '', $ninja_ver );

@@ -1,20 +1,23 @@
 <?php 
 /**
- * Template Index/Front/Page
- * Learn more: {@link }
+ * \Swiper\
+ * @link
  * @since 1.0
- * 
+ * @author ninja
  */
+
 if ( !defined('ABSPATH') ) {
     exit;
 }
 add_action( 'ninja_front', function() {
-    import_view('view', 'swiper' );
     /**
-     * Template Slider
+     * View Slider
      * Learn more: {@link http://idangero.us/swiper/}
      * @since 0.1
+     * @author ninja
      */
+    import_view( 'swiper' );
+
     $ninja_slider = new Ninja_View_Slider;
     
     $out  = '<article id="ninja-slide-front">';
