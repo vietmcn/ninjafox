@@ -1,17 +1,16 @@
 <?php 
+if ( !defined('ABSPATH') ) {
+    exit;
+}
 /**
  * \Swiper\
  * @link
  * @since 1.0
  * @author ninja
  */
-
-if ( !defined('ABSPATH') ) {
-    exit;
-}
 add_action( 'ninja_front', function() {
     /**
-     * View Slider
+     * Display View Slider
      * Learn more: {@link http://idangero.us/swiper/}
      * @since 0.1
      * @author ninja
