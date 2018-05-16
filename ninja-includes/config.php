@@ -28,9 +28,12 @@
 /**
  * Import Class
  * @since 1.0
+ * @author ninja
  */
-require_once 'class/class-mobile-detect.php';
-require_once 'class/class-extend.php';
+require_once 'class/mobile-detect.php';
+require_once 'class/extend.php';
+require_once 'class/wc/ajax-cart.php'; // ajax Shop Cart
+
 /**
  * Import help function
  * @since 1.0

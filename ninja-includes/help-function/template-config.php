@@ -7,16 +7,9 @@ if ( !defined('ABSPATH') ) {
  * @since 1.0
  * @author ninja
  */ 
-
-global $ninja_mobile;
-
-if ( $ninja_mobile->isMobile() ) {
-    
-} else {
-    //Import Header
-    import_template( 'large', 'header' );
-    //Import Front
-    import_template( 'large', 'front' );
-    //Import Footer
-    import_template( 'large', 'footer' );
-}
+//Import Header
+import_template( 'large', 'header' );
+//Import Front
+import_template( 'large', 'front' );
+//Import Footer
+import_template( 'large', 'footer' );

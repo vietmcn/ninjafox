@@ -6,7 +6,7 @@
  *
  * @package 
  * @subpackage 
- * @since 
+ * @since 1.0
  */
 ?>
-</main><?php do_action('ninja_footer'); wp_footer();?></body></html>
+</main><?php do_action('ninja_footer');?><?php wp_footer();?></body></html>

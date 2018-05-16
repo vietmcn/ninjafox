@@ -2,6 +2,9 @@
 if ( !defined('ABSPATH') ) {
     exit;
 }
+//View
+import_view( 'header' );
+
 /**
  * List Hook Template
  * @link {https://codex.wordpress.org/Plugin_API/Hooks}
@@ -23,7 +26,6 @@ if ( ! function_exists('ninja_front_head_before' ) ) {
         echo '<div class="ninja-container flex">';
     }
 }
-
 if ( !function_exists('ninja_front_head') ) {
     /**
      * Display Content Header 
@@ -32,22 +34,28 @@ if ( !function_exists('ninja_front_head') ) {
      */
     function ninja_front_head() {
 
-        //View Template
-        import_view( 'header' );
         $ninja_view = new Ninja_View_Front;
-
         //Render Logo Main
         $ninja_view->logo( array(
             'url' => get_bloginfo('url'),
             'title' => get_bloginfo('name'),
             'logo_img' => '//opencart.opencartworks.com/themes/so_emarket/layout2/image/catalog/logo2.png',
         ));
-        
+    }
+}
+if ( !function_exists( 'ninja_front_head_search' ) ) {
+    /**
+     * Hiển Thị Form Tìm Kiếm 
+     * @engine Google Case
+     * @link {}
+     * @since 1.0
+     * @author ninja
+     */
+    function ninja_front_head_search() {
         //Form Search by Google
         $ninja_view->search();
     }
 }
-
 if ( !function_exists( 'ninja_front_head_cart' ) ) {
     /**
 	 * Display Header Cart
@@ -57,14 +65,22 @@ if ( !function_exists( 'ninja_front_head_cart' ) ) {
 	 * @return void
 	 */
     function ninja_front_head_cart() {
-        //import Cart
-        import_view( 'cart' );
-        $ninja_cart = new Ninja_WCCart;
-        $ninja_cart->ninja_cart_link();
+        
+        ?>
+            <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'storefront' ); ?>">
+                <span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> 
+                <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) );?></span>
+            </a>
+        <?php 
+
     }
 }
-
 if ( ! function_exists('ninja_front_head_after' ) ) {
+    /**
+     * after Header Container 
+     * @since 1.0
+     * @author ninja
+     */
     function ninja_front_head_after() {
         echo '</div>';
     }
