@@ -4,7 +4,6 @@ if ( !defined('ABSPATH') ) {
 }
 //View
 import_view( 'header' );
-
 /**
  * List Hook Template
  * @link {https://codex.wordpress.org/Plugin_API/Hooks}
@@ -13,7 +12,7 @@ import_view( 'header' );
  */
 add_action( 'ninja_header', 'ninja_front_head_before', 5 );
 add_action( 'ninja_header', 'ninja_front_head',        10 );
-add_action( 'ninja_header', 'ninja_front_head_cart',   15 );
+add_action( 'ninja_header', 'ninja_front_head_cart',   20 );
 add_action( 'ninja_header', 'ninja_front_head_after',  50 );
 
 if ( ! function_exists('ninja_front_head_before' ) ) {
@@ -35,24 +34,19 @@ if ( !function_exists('ninja_front_head') ) {
     function ninja_front_head() {
 
         $ninja_view = new Ninja_View_Front;
+
         //Render Logo Main
         $ninja_view->logo( array(
             'url' => get_bloginfo('url'),
             'title' => get_bloginfo('name'),
             'logo_img' => '//opencart.opencartworks.com/themes/so_emarket/layout2/image/catalog/logo2.png',
         ));
-    }
-}
-if ( !function_exists( 'ninja_front_head_search' ) ) {
-    /**
-     * Hiển Thị Form Tìm Kiếm 
-     * @engine Google Case
-     * @link {}
-     * @since 1.0
-     * @author ninja
-     */
-    function ninja_front_head_search() {
-        //Form Search by Google
+        /**
+         * Render Search Form Google Case
+         * @link {}
+         * @since 1.0
+         * @author ninja
+         */ 
         $ninja_view->search();
     }
 }

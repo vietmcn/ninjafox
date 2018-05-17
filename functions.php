@@ -72,5 +72,7 @@ $ninja_ver   = $theme['Version'];
  * Set the content width based on the theme's design and stylesheet.
  *
  * @since 1.0
+ * @author ninja
  */
-require_once 'ninja-includes/config.php';
+require_once 'ninja-includes/_config-template.php';
+require_once 'ninja-template/template-setup.php';

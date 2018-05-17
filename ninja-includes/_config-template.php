@@ -25,24 +25,6 @@
  * @since 1.0
  */
 
-/**
- * Import Class
- * @since 1.0
- * @author ninja
- */
-require_once 'class/mobile-detect.php';
-require_once 'class/extend.php';
-require_once 'class/wc/ajax-cart.php'; // ajax Shop Cart
-
-/**
- * Import help function
- * @since 1.0
- * @author ninja
- */
-//Config Template 
-require_once 'help-function/template-config.php';
-
-
 add_action('after_setup_theme', function() {
 	/**
 	 * Set up template
@@ -93,33 +75,3 @@ add_action('after_setup_theme', function() {
  * @author ninja
  */
 add_filter('show_admin_bar', '__return_false');
-
-
-add_action( 'wp_enqueue_scripts', function() {
-	/**
-	 * Setup Script 
-	 * @link {https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts}
-	 * @since 1.0
-	 * @author ninja
-	 */
-	global $ninja_ver;
-	wp_enqueue_style( 'ninja-style', get_template_directory_uri() . '/style.css', '', $ninja_ver );
-	wp_enqueue_style( 'ninja-screen', get_template_directory_uri() . '/ninja-assets/css/screen.min.css', '', $ninja_ver );
-	wp_enqueue_style( 'ninja-font', '//fonts.googleapis.com/css?family=Quicksand:400,500,700', '', $ninja_ver );
-} );
-
-add_action('wp_footer', function() {
-	?>
-		<script>
-			(function() {
-				var cx = '011986442607755133710:kfeywyfxn94';
-				var gcse = document.createElement('script');
-				gcse.type = 'text/javascript';
-				gcse.async = true;
-				gcse.src = '//cse.google.com/cse.js?cx=' + cx;
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(gcse, s);
-			})();
-		</script>
-	<?php 
-} );
