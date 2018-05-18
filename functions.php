@@ -54,9 +54,9 @@ if ( ! function_exists( 'import_view' ) ) {
  */
 if ( ! function_exists( 'import_template' ) ) {
 	function import_template( $folder = NULL, $name = NULL ) {
-		$inc = 'ninja-includes';
-		$template = 'help-function/template';
-		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$template.'/screen-'.$folder.'/'.$name.'.php' );
+		$inc = 'ninja-content';
+		$template = 'template';
+		require_once ( N_EXTEND_FOLDER .'/'.$inc.'/'.$template.'/'.$folder.'/'.$name.'.php' );
 	}
 }
 
@@ -69,10 +69,17 @@ $theme       = wp_get_theme( 'ninja' );
 $ninja_ver   = $theme['Version'];
 
 /**
- * Set the content width based on the theme's design and stylesheet.
- *
+ * import Check Device
  * @since 1.0
  * @author ninja
  */
+require_once 'ninja-includes/class.mobile-detect.php';
+$mobile = new Mobile_Detect;
+/**
+ * 
+ */
 require_once 'ninja-includes/_config-template.php';
-require_once 'ninja-template/template-setup.php';
+/**
+ * 
+ */
+require_once 'ninja-content/req-template.php';
