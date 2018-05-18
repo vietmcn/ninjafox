@@ -8,8 +8,17 @@ if ( !defined('ABSPATH') ) {
  * @author ninja
  */
 global $mobile;
-if ( $mobile->isMobile() ) { 
-    import_template( 'small', 'header' );
-} else {
-    import_template( 'large', 'header' );
+
+switch( $mobile ) {
+
+    case $mobile->isTablet() :
+        echo 'Tablet';
+        break;
+    case $mobile->isMobile() :
+        //import template
+        import_template( 'small', 'header' );
+        break;
+    default:
+        import_template( 'large', 'header' );
+        break;
 }
