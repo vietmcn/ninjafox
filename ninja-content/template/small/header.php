@@ -30,13 +30,14 @@ if ( !function_exists('ninja_header_mobile_before') ) {
 }
 if ( !function_exists('ninja_header_mobile_logo') ) {
     /**
-     * Display after container header mobile
+     * Display logo 
+     * @divce mobile
      * @since 1.0
      * @author ninja
      */
     function ninja_header_mobile_after()
     {
-
+        
     }
 }
 
