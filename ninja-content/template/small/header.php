@@ -16,7 +16,10 @@ if ( !defined('ABSPATH') ) {
  */
 add_action( 'wp_enqueue_scripts', function() {
     global $ver;
-    wp_enqueue_style( 'ninja-screen-small', get_template_directory_uri().'/ninja-assets/css/ninja-screen-small.min.css', $ver, 'all' );
+    if ( is_single() ) {
+
+    }
+    wp_enqueue_style( 'ninja-screen-small-all', get_template_directory_uri().'/ninja-assets/css/screen-small-all.min.css', $ver, 'all' );
 } );
 /**
  * List Hook Template
