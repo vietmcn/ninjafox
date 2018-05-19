@@ -60,11 +60,17 @@ if ( !function_exists('ninja_header_mobile_bottom') ) {
         } else {
             $h = 'span';
         }
-        $out  = '<nav id="ninja-nav">';
-        $out .= '<'.$h.' id="ninja-logo">';
-        $out .= '<a href="'.get_bloginfo('url').'">Trangfox.com</a>';
-        $out .= '</'.$h.'>';
-        $out .= '<a id="ninja-category" class="ninja-categorys" href="/danh-muc" title="Danh Mục Sản Phẩm"><ion-icon name="keypad"></ion-icon></a>';
+        $out  = '<nav id="ninja-nav" class="row">';
+        $out .= '<a class="flex" href="'.get_bloginfo('url').'"><ion-icon ios="ios-home" md="md-home"></ion-icon><span>Trang Chủ</span></a>';
+        $out .= '<a id="ninja-category" class="ninja-categorys flex" href="/danh-muc" title="Danh Mục Sản Phẩm"><ion-icon name="apps"></ion-icon><span>Danh Mục</span></a>';
+        $out .= '<a id="ninja-cart" class="flex cart" href="'.esc_url( wc_get_cart_url() ).'" title="'.esc_attr( 'Kiểm tra giỏ hàng của bạn', 'ninjafox' ).'">';
+        if ( WC()->cart->get_cart_contents_count() ) {
+            $out .= '<span class="count">'.wp_kses_data( WC()->cart->get_cart_contents_count() ).'</span>';
+        }
+        $out .= '<ion-icon name="cart"></ion-icon>';
+        $out .= '<span>giỏ hàng</span>';
+        $out .= '</a>';
+        $out .= '<a id="ninja-account" href="/tai-khoan" title="Tài khoản của bạn" class="flex"><ion-icon ios="ios-contacts" md="md-contacts"></ion-icon><span>Tài Khoản</span></a>';
         $out .= '</nav>';
         echo $out;
     }
