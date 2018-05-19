@@ -16,10 +16,12 @@ if ( !defined('ABSPATH') ) {
  */
 add_action( 'wp_enqueue_scripts', function() {
     global $ver;
-    if ( is_single() ) {
+    if ( is_singular( 'product' ) ) {
+        wp_enqueue_style( 'ninja-screen-small-all', get_template_directory_uri().'/ninja-assets/css/single-product-small.min.css', '', $ver );
+    } else {
 
     }
-    wp_enqueue_style( 'ninja-screen-small-all', get_template_directory_uri().'/ninja-assets/css/screen-small-all.min.css', $ver, 'all' );
+    wp_enqueue_style( 'ninja-screen-small-all', get_template_directory_uri().'/ninja-assets/css/screen-small-all.min.css', '', $ver );
 } );
 /**
  * List Hook Template
