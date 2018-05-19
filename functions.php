@@ -65,7 +65,7 @@ if ( ! function_exists( 'import_template' ) ) {
  *
  * @since 1.0
  */
-$theme       = wp_get_theme( 'ninja' );
+$theme       = wp_get_theme( 'ninjafox' );
 $ninja_ver   = $theme['Version'];
 
 /**
