@@ -55,14 +55,12 @@ if ( !function_exists('ninja_header_mobile_bottom') ) {
      */
     function ninja_header_mobile_bottom()
     {
-        if ( is_home() || is_front_page() ) {
-            $h = 'h1';
-        } else {
-            $h = 'span';
-        }
         $out  = '<nav id="ninja-nav" class="row">';
+        //Trang Chủ
         $out .= '<a class="flex" href="'.get_bloginfo('url').'"><ion-icon ios="ios-home" md="md-home"></ion-icon><span>Trang Chủ</span></a>';
+        //Danh Mục
         $out .= '<a id="ninja-category" class="ninja-categorys flex" href="/danh-muc" title="Danh Mục Sản Phẩm"><ion-icon name="apps"></ion-icon><span>Danh Mục</span></a>';
+        //Cart
         $out .= '<a id="ninja-cart" class="flex cart" href="'.esc_url( wc_get_cart_url() ).'" title="'.esc_attr( 'Kiểm tra giỏ hàng của bạn', 'ninjafox' ).'">';
         if ( WC()->cart->get_cart_contents_count() ) {
             $out .= '<span class="count">'.wp_kses_data( WC()->cart->get_cart_contents_count() ).'</span>';
@@ -70,6 +68,7 @@ if ( !function_exists('ninja_header_mobile_bottom') ) {
         $out .= '<ion-icon name="cart"></ion-icon>';
         $out .= '<span>giỏ hàng</span>';
         $out .= '</a>';
+        //Account
         $out .= '<a id="ninja-account" href="/tai-khoan" title="Tài khoản của bạn" class="flex"><ion-icon ios="ios-contacts" md="md-contacts"></ion-icon><span>Tài Khoản</span></a>';
         $out .= '</nav>';
         echo $out;
@@ -83,6 +82,6 @@ if ( !function_exists('ninja_header_mobile_after') ) {
      */
     function ninja_header_mobile_after()
     {
-
+        echo '</div>';
     }
 }
