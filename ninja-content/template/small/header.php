@@ -7,17 +7,6 @@
 if ( !defined('ABSPATH') ) {
     exit;
 }
-
-/**
- * Add Stylelist Mobile 
- * @link {https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts}
- * @since 1.0 
- * @author ninja
- */
-add_action( 'wp_enqueue_scripts', function() {
-    global $ninja_ver;
-    wp_enqueue_style( 'ninja-screen-small-all', get_template_directory_uri().'/ninja-assets/css/screen-small-all.min.css', '', $ninja_ver );
-} );
 /**
  * List Hook Template
  * @link {https://codex.wordpress.org/Plugin_API/Hooks}
@@ -28,6 +17,16 @@ add_action( 'ninja_header', 'ninja_header_mobile_before',   5 );
 add_action( 'ninja_header', 'ninja_header_mobile_top',     10 );
 add_action( 'ninja_header', 'ninja_header_mobile_bottom',  15 );
 add_action( 'ninja_header', 'ninja_header_mobile_after',   55 );
+/**
+ * Add Stylelist Mobile 
+ * @link {https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts}
+ * @since 1.0 
+ * @author ninja
+ */
+add_action( 'wp_enqueue_scripts', function() {
+    global $ninja_ver;
+    wp_enqueue_style( 'ninja-screen-small-all', get_template_directory_uri().'/ninja-assets/css/screen-small-all.min.css', '', $ninja_ver );
+} );
 //Render Function
 if ( !function_exists('ninja_header_mobile_before') ) {
     /**
@@ -50,6 +49,7 @@ if ( !function_exists('ninja_header_mobile_top') ) {
 if ( !function_exists('ninja_header_mobile_bottom') ) {
     /**
      * Display Bottom nav Menu
+     * @link {}
      * @since 1.0
      * @author ninja
      */
@@ -66,7 +66,7 @@ if ( !function_exists('ninja_header_mobile_bottom') ) {
         $out .= '</'.$h.'>';
         $out .= '<a id="ninja-category" class="ninja-categorys" href="/danh-muc" title="Danh Mục Sản Phẩm"><ion-icon name="keypad"></ion-icon></a>';
         $out .= '</nav>';
-        echo $out;
+        render( $out );
     }
 }
 if ( !function_exists('ninja_header_mobile_after') ) {

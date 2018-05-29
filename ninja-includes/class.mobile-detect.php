@@ -1470,5 +1470,4 @@ class Mobile_Detect
         return self::MOBILE_GRADE_C;
     }
 }
-
 $ninja_mobile = new Mobile_Detect;

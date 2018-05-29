@@ -26,19 +26,18 @@
  */
 
 /**
- * Defined Import Folder 
- *
+ * Defined Folder 
  * @since 1.0
+ * @author ninjafox
  */
 
 if ( ! defined( 'N_EXTEND_FOLDER' ) ) {
 	define( 'N_EXTEND_FOLDER', __DIR__ );
 }
-
 /**
  * Crate function import view
- *
  * @since 1.0
+ * @author ninjafox
  */
 if ( ! function_exists( 'import_view' ) ) {
     function import_view( $name = NULL ) {
@@ -49,8 +48,8 @@ if ( ! function_exists( 'import_view' ) ) {
 }
 /**
  * Crate function import_template
- *
  * @since 1.0
+ * @author ninjafox
  */
 if ( ! function_exists( 'import_template' ) ) {
 	function import_template( $folder = NULL, $name = NULL ) {
@@ -62,24 +61,33 @@ if ( ! function_exists( 'import_template' ) ) {
 
 /**
  * GET the Version Template
- *
  * @since 1.0
+ * @author ninjafox
  */
 $theme       = wp_get_theme( 'ninjafox' );
 $ninja_ver   = $theme['Version'];
 
 /**
  * import Check Device
+ * @link {http://mobiledetect.net}
  * @since 1.0
- * @author ninja
+ * @author Current authors: Serban Ghita <serbanghita@gmail.com>
+ *                          Nick Ilyin <nick.ilyin@gmail.com>
+ * @license Code and contributions have 'MIT License'
+ *          More details: https://github.com/serbanghita/Mobile-Detect/blob/master/LICENSE.txt
  */
 require_once 'ninja-includes/class.mobile-detect.php';
-$mobile = new Mobile_Detect;
+
 /**
- * 
+ * Import Config Template 
+ * @link {https://codex.wordpress.org/Plugin_API/Action_Reference/after_setup_theme}
+ * @since 1.0
+ * @author ninjafox
  */
 require_once 'ninja-includes/_config-template.php';
 /**
- * 
+ * Import Template Wordpress
+ * @since 1.0
+ * @author ninjafox
  */
-require_once 'ninja-content/req-template.php';
+require_once 'ninja-content/req.php';

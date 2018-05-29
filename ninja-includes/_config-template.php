@@ -75,3 +75,24 @@ add_action('after_setup_theme', function() {
  * @author ninja
  */
 add_filter('show_admin_bar', '__return_false');
+
+add_action( 'wp_enqueue_scripts', function() {
+	/**
+	 * Setup Stylelist + Javascript 
+	 * @link {https://codex.wordpress.org/Plugin_API/Action_Reference/wp_enqueue_scripts}
+	 * @since 1.0
+	 * @author ninja
+	 */
+    global $ninja_ver;
+    
+	wp_enqueue_style( 'ninja-style', get_template_directory_uri() . '/style.css', '', $ninja_ver );
+    wp_enqueue_style( 'ninja-screen', get_template_directory_uri() . '/ninja-assets/css/screen.min.css', '', $ninja_ver );
+    wp_enqueue_style( 'ninja-font', '//fonts.googleapis.com/css?family=Quicksand:400,500,700', '', $ninja_ver );
+    /**
+	 * Icon
+	 * @link {}
+	 * @since 4.1.1
+	 * @author Ionicon
+	 */
+    wp_enqueue_script( 'ninja-icon', '//unpkg.com/ionicons@4.1.1/dist/ionicons.js', array('jquery'), '4.1.1', true );
+} );
