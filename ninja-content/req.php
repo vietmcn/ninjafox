@@ -9,7 +9,7 @@ if ( !defined('ABSPATH') ) {
 }
 if ( !function_exists( 'render' ) ) {
     function render( $att = NULL ) {
-        $if ( !empty( $att ) ) {
+        if ( !empty( $att ) ) {
             echo $att;
         } else {
             echo 'Lổi Render Đối Tượng';
