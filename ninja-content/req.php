@@ -1,20 +1,6 @@
 <?php
-/**
- * Import Template 
- * @since 1.0
- * @author 1.0
- */
 if ( !defined('ABSPATH') ) {
     exit;
-}
-if ( !function_exists( 'render' ) ) {
-    function render( $att = NULL ) {
-        if ( !empty( $att ) ) {
-            echo $att;
-        } else {
-            echo 'Lổi Render Đối Tượng';
-        }
-    }
 }
 /**
  * Render Only SCreen Device Mobile 
@@ -49,5 +35,4 @@ switch( $ninja_mobile ) {
          */
         import_template( 'large', 'header' );
         break;
-
 }

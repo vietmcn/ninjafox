@@ -1,4 +1,6 @@
 <?php 
+new Render\Ninja_Temp;
+
 /**
  * Display render header mobile
  * @since 1.0
@@ -36,7 +38,7 @@ if ( !function_exists('ninja_header_mobile_before') ) {
      */
     function ninja_header_mobile_before()
     {
-        render( '<div id="mobile-header" data-mobile="header" class="ninja-container">' );
+        Ninja_Temp::render( '<div id="mobile-header" data-mobile="header" class="ninja-container">' );
     }
 }
 if ( !function_exists('ninja_header_mobile_top') ) {
@@ -71,7 +73,7 @@ if ( !function_exists('ninja_header_mobile_bottom') ) {
         //Account
         $out .= '<a id="ninja-account" href="/tai-khoan" title="Tài khoản của bạn" class="flex"><ion-icon ios="ios-contacts" md="md-contacts"></ion-icon><span>Tài Khoản</span></a>';
         $out .= '</nav>';
-        render( $out );
+        #render( $out );
     }
 }
 if ( !function_exists('ninja_header_mobile_after') ) {
@@ -82,6 +84,6 @@ if ( !function_exists('ninja_header_mobile_after') ) {
      */
     function ninja_header_mobile_after()
     {
-        render( '</div>' );
+        #render( '</div>' );
     }
 }

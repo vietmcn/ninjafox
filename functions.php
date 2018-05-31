@@ -77,14 +77,14 @@ $ninja_ver   = $theme['Version'];
  *          More details: https://github.com/serbanghita/Mobile-Detect/blob/master/LICENSE.txt
  */
 require_once 'ninja-includes/class.mobile-detect.php';
-
+require_once 'ninja-includes/class.temp.php';
 /**
  * Import Config Template 
  * @link {https://codex.wordpress.org/Plugin_API/Action_Reference/after_setup_theme}
  * @since 1.0
  * @author ninjafox
  */
-require_once 'ninja-includes/_config-template.php';
+require_once 'ninja-content/_config.php';
 /**
  * Import Template Wordpress
  * @since 1.0
