@@ -1,4 +1,6 @@
-<?php 
+<?php
+namespace App\Etendx;
+
 if ( !defined( 'ABSPATH' ) ) {
     exit;
 }

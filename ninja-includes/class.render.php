@@ -1,7 +1,7 @@
 <?php 
-namespace Temp\Render;
+namespace App\Render;
 
-class Ninja_Temp
+class Render
 {
     protected $att = NULL;
 
